@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EBMACH.MainPage">
+    <StackLayout BackgroundColor="#e9e9e9">
+        <Label Margin="0,0,0,10" Text="Gestionnaire de machine à bière connectée" FontAttributes="Bold" FontSize="Large" TextColor="Gray" HorizontalTextAlignment="Center" ></Label>
+
+        <StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Button x:Name="btnAdd" WidthRequest="200" Text="Activer la machine" Clicked="BtnAdd_Clicked"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+                    <Grid Margin="5,10,5,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="2" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0"
+                               Grid.Row="0"
+                               Text="Données actuelles"
+                               FontSize="22"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="End" />
+                        <Label Grid.Column="1"
+                               x:Name="TimeLabel"
+                               Grid.Row="0"
+                               Margin="0,0,-15,-3"
+                               Text="..."
+                               FontSize="12"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="End"/>
+                        <StackLayout Grid.Column="0" Grid.ColumnSpan="2" Margin="10,0" Grid.Row="1" BackgroundColor="DarkGray"></StackLayout>
+                    </Grid>
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal"  Margin="20,30,20,20">
+                        <StackLayout Grid.Column="0" HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="iconTemperature.png" WidthRequest="80"/>
+                                <Label x:Name="RoomLabel"
+                                       Margin="-10,40,0,0"
+                                       Text="..."
+                                       FontSize="30"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                            <Label Text="Température de la piéce"
+                               FontSize="14"
+                               HorizontalOptions="Center"
+                               VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="iconTemperature.png" WidthRequest="80"/>
+                                <Label x:Name="BeerLabel"
+                                       Margin="-10,40,0,0"
+                                       Text="..."
+                                       FontSize="30"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                            
+                            <Label Text="Température de la bière"
+                               FontSize="14"
+                               HorizontalOptions="Center"
+                               VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <Grid Margin="5,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="2" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0"
+                               Text="Historique de consomation d'énergie"
+                               FontSize="18"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="StartAndExpand" />
+                        <StackLayout Margin="10,0" Grid.Row="1" BackgroundColor="DarkGray"></StackLayout>
+                    </Grid>
+                    <Grid Margin="20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                            <RowDefinition Height="5*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="1" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="Gray"></StackLayout>
+                        <StackLayout Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" BackgroundColor="Gray"></StackLayout>
+                        <Picker x:Name="picker" Grid.Column="2" Grid.Row="2" Margin="0,0,0,-8"
+                            Title="Whatt par  ⇩" HorizontalTextAlignment="Center"
+                               FontSize="17"
+                                TextColor="Black"
+                            SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                            <Picker.Items>
+                                <x:String>Jours</x:String>
+                                <x:String>Mois</x:String>
+                                <x:String>Années</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <StackLayout Grid.Column="3" Grid.Row="1" Grid.RowSpan="3" BackgroundColor="Gray"></StackLayout>
+                        <StackLayout Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3"  BackgroundColor="Gray"></StackLayout>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
