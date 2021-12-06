@@ -1,0 +1,8 @@
+Host deimos ophelia portia titania bianca belinda ariel cordelia phoebe pandore japet janus mimas tethys titan
+    IdentitiesOnly yes
+    IdentityFile ~/.ssh/LDubois_rsa_cyberlab
+    User dubois
+    ForwardX11 yes
+    Port 22
+    ProxyJump proxyssh@casa-irisa.univ-ubs.fr:8822
+    ServerAliveInterval 300

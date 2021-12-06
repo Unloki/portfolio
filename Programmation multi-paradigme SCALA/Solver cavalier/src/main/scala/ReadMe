@@ -1,0 +1,41 @@
+J'utilise la technique backtracking pour resoudre le probleme du cavalier d'euler
+
+0N commence avec la condition d'arret :
+Si toutes les places sont visitées
+    imprimer la solution
+Sinon
+   a) On recupere les mouvement possibles avec trouveDeplacementsCavalier
+
+       pour chaque mouvement,on l'ajoute au vecteur de solution et on verifie
+        si ce mouvement mène à une solution.
+       Sinon le coup choisi à l'étape ci-dessus return false avec l amethode recursif, il n'
+       y a donc pas de chemins apres,ont supprime ce mouvement du vecteur de solution
+       et essayez d'autres mouvements alternatifs. (ici représenté en mettant la case a -1
+
+   c) Si aucune des alternatives ne fonctionne, renvoyer false (Renvoyer false
+   supprimera l'élément précédemment ajouté en récursivité et si false est
+   renvoyé par l'appel initial de récursivité alors "aucune solution n'existe")
+
+! Le temps comprends l'affichage de l'echequier !
+code executer
+ pour 5 coté : 112ms
+pour 6 coté :   415ms
+pour 7 coté : 1 972ms
+pour 8 coté : 3 121ms
+
+Theoriquement,
+pour :9x9   = 10 000ms
+pour :10x10 = 30 000ms
+pour :11x11 = 90 000ms
+
+Conclusion, trop long pour des echequiers de grande tailles
+
+Pour la partie heuristique:
+5x5 :  59ms
+6x6 :  89ms
+7x7 :  103ms
+8x8 :  118ms
+9x9 :  101ms
+
+En utilisant  une  heuristique, on  va  optimiser  la  recherche, peut importe la taille de l'echequier,
+le temps de recherche reste a peu prés le même

@@ -1,0 +1,24 @@
+Pour lancer le projet :
+java -jar Sudoku.jar *Nombre De grille a génerer
+
+exemple: java -jar Sudoku.jar 7
+
+Par défaut, le programme génère 5 grilles
+
+La méthode solver() possède un paramètre par défaut, un booléen, si vrai alors on souhaite résoudre un sudoku,
+La méthode va donc renvoyer une liste contenant une seule matrice.
+Si le booléen est faux, alors on souhaite générer une liste de Sudoku
+
+Pour génère la liste de grilles sudoku, pour le nombre de grilles, on résout d'abord un sudoku (Avant de résoudre le sudoku,
+Je change des valeurs aléatoire dans le sudoku pour les rendres plus "differents", sinon leurs 1er lignes ressemblaient a "1 2 3 4 5 6 7 8 9"
+Pour génère la grille, la méthode "fillXY" appelle la méthode récursive "fillXYUtil(xy_ : Tuple2[Int, Int]): Boolean =" qui remplit la grille
+Une fois que la grille est génère, on enlève ensuite des cases à des positions aléatoires (ici 35 cases pour une difficulté moyenne)
+On ajoute ensuite la grille à la liste qui sera retournée en résultat.
+
+Pour l'affichage d'un sudoku,
+Un peu dans l'idée de l'échiquier, j'ai créé une classe SudokuVue qui est crée avec la matrice d'un sudoku en paramètre, j'ai
+Overrider la méthode ToString(), cette méthode génère un "joli" tableau dans la console, en remplaçant les cases vides par un espace
+
+J'aurais pu faire l'affichage dans la classe Sudoku, mais je préférai séparer pour que ce soit plus claire.
+
+Mon programme résout le 1er sudoku de la liste généré ainsi que le sudoku de l'énoncé.
