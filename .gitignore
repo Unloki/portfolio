@@ -1,0 +1,6 @@
+# ignore all logs
+*.log
+# ignore Develop games mobile
+/DeepWood/**
+
+
